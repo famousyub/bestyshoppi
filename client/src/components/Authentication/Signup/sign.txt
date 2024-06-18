@@ -1,0 +1,304 @@
+<div className="min-h-screen bg-grsy-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
+      <div className="sm:mx-auto sm:w-full sm:max-w-md">
+        <h2 className="mt-6 text-center text-3xl uppercase font-extrabold text-gray-900">
+          Register
+        </h2>
+      </div>
+      <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+        <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm::px-10">
+          <form
+            action=""
+            className="space-y-6 flex flex-col"
+            onSubmit={handleSubmit}
+          >
+            <div className="self-center">
+              <img src={Logo} alt="Logo image" />
+            </div>
+            <div>
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Full Names
+              </label>
+              <div className="mt-1">
+                <input
+                  type="text"
+                  name="text"
+                  id="signup-name"
+                  autoComplete="name"
+                  placeholder="Enter your full name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                />
+              </div>
+            </div>
+            <div>
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Email address
+              </label>
+              <div className="mt-1">
+                <input
+                  type="email"
+                  name="email"
+                  id="signup-email"
+                  autoComplete="email"
+                  placeholder="Enter your email address"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                />
+              </div>
+            </div>
+            <div>
+              <label
+                htmlFor="password"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Password
+              </label>
+              <div className="mt-1 relative">
+                <input
+                  type={visible ? "text" : "password"}
+                  name="password"
+                  id="signup-password"
+                  autoComplete="current-password"
+                  placeholder="Enter you password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                />
+                {visible ? (
+                  <AiOutlineEye
+                    className="absolute right-2 top-2 cursor-pointer"
+                    size={25}
+                    onClick={() => setVisible(false)}
+                  />
+                ) : (
+                  <AiOutlineEyeInvisible
+                    className="absolute right-2 top-2 cursor-pointer"
+                    size={25}
+                    onClick={() => setVisible(true)}
+                  />
+                )}
+              </div>
+            </div>
+            <div>
+              <label
+                htmlFor="avatar"
+                className="block text-sm font-medium text-gray-700"
+              >
+                <div className="mt-2 flex items-center">
+                  <span className="inline-block h-8 v-8 rounded-full overflow-hidden">
+                    {avatar ? (
+                      <img
+                        src={URL.createObjectURL(avatar)}
+                        alt="avatar"
+                        className="h-8 w-8 object-cover rounded-full"
+                      />
+                    ) : (
+                      <RxAvatar className="h-8 w-8" />
+                    )}
+                  </span>
+                  <label
+                    htmlFor="file-input"
+                    className="ml-5 flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm font-medium text-gray-700 bg-white hover:bg-gray-50"
+                  >
+                    <span className="cursor-pointer">Upload an image</span>
+                    <input
+                      type="file"
+                      name="avatar"
+                      id="file-input"
+                      accept=".jpg,.jpeg,.png"
+                      onChange={handleFileInputChange}
+                      className="sr-only "
+                    />
+                  </label>
+                </div>
+              </label>
+            </div>
+            <div>
+              <div className={`${styles.normalFlex} justify-between`}>
+                <div className={`${styles.normalFlex}`}>
+                  <input
+                    type="checkbox"
+                    checked={isTerms}
+                    onChange={handleTermsChange}
+                    name="terms-conditions"
+                    id="terms-conditions"
+                    className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                  />
+                  <label
+                    htmlFor="terms-conditions"
+                    className="ml-2 block text-sm text-gray-900"
+                  >
+                    I agree to ShopO’s{" "}
+                    <Link
+                      to={`/terms&cookies`}
+                      className="underline hover:text-blue-400"
+                    >
+                      {" "}
+                      Terms and Conditions
+                    </Link>{" "}
+                    .
+                  </label>
+                </div>
+              </div>
+              <div className={`${styles.normalFlex} justify-between mt-2 mb-4`}>
+                <div className={`${styles.normalFlex}`}>
+                  <input
+                    type="checkbox"
+                    checked={isPrivacy}
+                    onChange={handlePrivacyChange}
+                    name="privacy-policy"
+                    id="privacy-policy"
+                    className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded cursor-pointer"
+                  />
+                  <label
+                    htmlFor="privacy-policy"
+                    className="ml-2 block text-sm text-gray-900"
+                  >
+                    I agree to ShopO’s{" "}
+                    <Link
+                      to={`/privacy&policy`}
+                      className="underline hover:text-blue-400"
+                    >
+                      {" "}
+                      Privacy and Cookie Policy
+                    </Link>{" "}
+                    .
+                  </label>
+                </div>
+              </div>
+              <button
+                type="submit"
+                className="group relative w-full h-[42px] flex justify-center py-2 px-4 border border-transparent text-md font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700"
+              >
+                REGISTER
+              </button>
+            </div>
+            {/* <div className="  flex justify-center  text-lg font-bold text-gray-700 ">
+              -- OR --
+            </div>
+            <div className="flex justify-center space-x-6 w-full">
+              <FacebookOauth />
+              <GoogleOauth />
+              {/* <AppleOauth /> 
+            </div> */}
+            <div className={`${styles.normalFlex} w-full`}>
+              <h4 className="relative w-full flex justify-center font-Poppins">
+                Already have an account? Login as
+              </h4>
+            </div>
+            <div className={`${styles.normalFlex} w-full`}>
+              <h4 className="w-full h-[10] flex justify-around">
+                <Link to="/login" className="text-white pr-2">
+                  <div
+                    className={`${styles.button} !h-[42px] !rounded-[5px] uppercase`}
+                  >
+                    Customer
+                  </div>
+                </Link>
+                <Link to="/seller-login" className="text-white pl-2">
+                  <div
+                    className={`${styles.button} !h-[42px] !rounded-[5px] uppercase`}
+                  >
+                    {" "}
+                    Seller{" "}
+                  </div>
+                </Link>
+              </h4>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      {/* {open && (
+        <>
+          <div className="w-full fixed top-0 left-0 items-center flex bg-[#0000004e] h-screen z-[9999] justify-center">
+            <div
+              className={`sm:w-[40%] w-[75%] bg-gray-200 shadow rounded min-h-[30vh] p-3`}
+            >
+              {/* <div className="w-full flex justify-end">
+                <RxCross1
+                  size={25}
+                  className="cursor-pointer"
+                  onClick={() => setOpen(false)}
+                />
+              </div> 
+              <div className="w-full flex items-center justify-center flex-col">
+                <h3 className="text-[22px] font-Poppins text-center  pb-5 font-[600]">
+                  ACCOUNT VERIFICATION
+                </h3>
+                <p className="text-center">
+                  Enter the <span className="font-semibold">OTP</span> and{" "}
+                  <span className="font-semibold">SECRET KEY</span> sent to your
+                  email account
+                </p>
+                <form
+                  action=""
+                  className="mt-5 flex gap-3 items-center flex-col"
+                >
+                  <label
+                    htmlFor="email"
+                    className="block text-md font-medium text-gray-700"
+                  >
+                    Secret Key <span className="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    name=""
+                    id=""
+                    className={`${styles.input} !w-[270px] mb-1 mt-1 sm:mb-0 px-3 py-2 mr-2 text-center  border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500`}
+                    required
+                    value={userId}
+                    placeholder="Input your Secret Key"
+                    onChange={(e) => setUserId(e.target.value)}
+                  />
+                  <label
+                    htmlFor="email"
+                    className="block text-md font-medium text-gray-700"
+                  >
+                    OTP CODE <span className="text-red-500">*</span>
+                  </label>
+                  <div className={`flex justify-center gap-3`}>
+                    {otp.map((value, index) => (
+                      <>
+                        <input
+                          key={index}
+                          className="otp text-center appearance-none block w-[50px] px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500"
+                          type="number"
+                          autoComplete={false}
+                          required
+                          placeholder={`${index + 1}`}
+                          value={value}
+                          onChange={(e) =>
+                            handleOtpChange(index, e.target.value)
+                          }
+                          ref={inputRefs[index]}
+                        />
+                        <span></span>
+                      </>
+                    ))}
+                  </div>
+                </form>
+                <div className="mt-4 flex justify-center">
+                  <hr className="mt-4" />
+                  <button
+                    onClick={handleAccountVerification}
+                    type="button"
+                    className="m-7 group relative w-auto h-[40] flex justify-center py-2 px-4 border border-transparent text-md font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 self-center"
+                  >
+                    VERIFY ACCOUNT
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </>
+      )} */}
+    </div>

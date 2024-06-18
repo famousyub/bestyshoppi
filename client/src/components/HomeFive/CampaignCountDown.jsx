@@ -3,7 +3,7 @@ import CountDown from "../Helpers/CountDown";
 
 export default function CampaignCountDown({ className, lastDate }) {
   const { showDate, showHour, showMinute, showSecound } = CountDown(lastDate);
-
+  const url ='http://localhost:1001'
   return (
     <div>
       <div className={`w-full lg:h-[460px] ${className || ""}`}>
@@ -14,7 +14,7 @@ export default function CampaignCountDown({ className, lastDate }) {
               className="campaign-countdown h-full w-full mb-5 lg:mb-0"
               style={{
                 background: `url(${
-                  import.meta.env.VITE_PUBLIC_URL
+                  url
                 }/assets/images/campaign-cover-countdown-4.jpg) no-repeat`,
                 backgroundSize: "cover",
               }}

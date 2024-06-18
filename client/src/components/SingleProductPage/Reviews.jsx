@@ -19,7 +19,14 @@ export default function Reviews({
   hoverRating,
   hoverHandler,
   reviewLoading,
-}) {
+}
+
+
+) 
+
+
+{
+  const url ='http://localhost:1001'
   return (
     <div className="review-wrapper w-full">
       <div className="w-full reviews mb-[60px]">
@@ -37,7 +44,7 @@ export default function Reviews({
                     <div className="w-[50px] h-[50px] rounded-full overflow-hidden">
                       <img
                         src={`${
-                          import.meta.env.VITE_PUBLIC_URL
+                          url
                         }/assets/images/comment-user-1.png`}
                         alt=""
                         className="w-full h-full object-cover"
@@ -82,7 +89,7 @@ export default function Reviews({
                           <div className="w-[50px] h-[50px] rounded-full overflow-hidden">
                             <img
                               src={`${
-                                import.meta.env.VITE_PUBLIC_URL
+                                url
                               }/assets/images/comment-user-2.png`}
                               alt=""
                               className="w-full h-full object-cover"

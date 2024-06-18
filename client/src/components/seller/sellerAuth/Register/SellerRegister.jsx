@@ -12,6 +12,8 @@ import GoogleOauth from "../../../Authentication/Oauth/GoogleOauth";
 import AppleOauth from "../../../Authentication/Oauth/AppleOauth";
 import styles from "../../../../styles/style";
 import { useSelector } from "react-redux";
+import HeaderOne from "../../../Partials/Headers/HeaderOne";
+import Thumbnail from "./Thumbnail";
 
 function SellerRegister() {
   const { seller } = useSelector((state) => state.seller);
@@ -204,13 +206,18 @@ function SellerRegister() {
   // };
 
   return (
+
+     <>
+    <HeaderOne  />
     <div className="min-h-screen bg-grsy-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
         <h2 className="mt-6 text-center text-3xl uppercase font-extrabold text-gray-900">
           Register a seller's account
+          <Thumbnail />
         </h2>
       </div>
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+    
         <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm::px-10">
           <form
             action=""
@@ -568,7 +575,10 @@ function SellerRegister() {
           </div>
         </>
       )} */}
+
+
     </div>
+    </>
   );
 }
 

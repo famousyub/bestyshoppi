@@ -204,7 +204,7 @@ const ProductDetails = ({ data }) => {
                     <h4
                       className={`${styles.productDiscountPrice} text-[23px]`}
                     >
-                      {data?.product?.discountPrice} KSHS
+                      {data?.product?.discountPrice} DT
                     </h4>
                     <h3 className={`${styles.price} text-[18px]`}>
                       {data?.product?.originalPrice

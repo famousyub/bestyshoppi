@@ -192,7 +192,7 @@ function App2() {
                   <Route path="/profile" element={<ProfilePage />} />
                   <Route path="/applist" element={<ApplIst />} />
 
-                  <Route path="/wishlist" element={<WishList />} />
+                  <Route path="/wishlist" element={<ApplIst />} />
                     
                   <Route path="/homeone" element={<Homeone />} />
                 {/* Define other routes here */}
@@ -463,6 +463,14 @@ function App2() {
                   element={
                     <SellerProtectedRoute>
                       <ShopAllOrders />
+                    </SellerProtectedRoute>
+                  }
+                />
+                  <Route
+                  path="couponCode/:id"
+                  element={
+                    <SellerProtectedRoute>
+                      <ShopOrderDetails />
                     </SellerProtectedRoute>
                   }
                 />

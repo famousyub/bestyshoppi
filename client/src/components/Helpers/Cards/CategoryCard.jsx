@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
 export default function CategoryCard({ background, title, brands = [] }) {
+  const url ='http://localhost:1001'
   return (
     <div
       className="category-card-wrappwer w-full h-full p-[30px]"
@@ -8,7 +9,7 @@ export default function CategoryCard({ background, title, brands = [] }) {
         background: `url(${
           background ||
           `${
-            import.meta.env.VITE_PUBLIC_URL
+            url
           }/assets/images/section-category-1.jpg`
         }) no-repeat`,
         backgroundSize: "cover",

@@ -1,4 +1,5 @@
 export default function DiscountBanner({ className, type }) {
+  const url ='http://localhost:1001'
   return (
     <div
       className={`discount-banner w-full h-[307px] bg-cover flex justify-center items-center ${
@@ -6,7 +7,7 @@ export default function DiscountBanner({ className, type }) {
       }`}
       style={{
         background: `url(${
-          import.meta.env.VITE_PUBLIC_URL
+          url
         }/assets/images/discount-banner-1.jpg) no-repeat`,
         backgroundSize: "cover",
       }}

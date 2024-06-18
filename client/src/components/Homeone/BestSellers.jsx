@@ -1,6 +1,42 @@
 import { Link } from "react-router-dom";
 
 export default function BestSellers({ className }) {
+
+
+
+  
+  const url ="http://localhost:1001"
+
+
+
+  
+  const [shops,setShops]  = useState([]);
+
+const [categories,setCategories] = useState([]);
+
+
+useEffect(()=>{
+
+ const cathelpers  = []; 
+ const shopshelpers =[] ; 
+
+
+ allProducts.map((el, index) =>{
+
+   shopshelpers.push(el.shop);
+
+
+   cathelpers.push (el.category);
+
+ })
+ setShops(shopshelpers);
+ setCategories(cathelpers);
+  console.log(categories)
+  console.table(shops);
+
+  console.table(categories);
+
+})
   return (
     <div className={`w-full ${className || ""}`}>
       <div className="grid xl:grid-cols-6 lg:grid-cols-5 sm:grid-cols-3 grid-cols-1 xl:gap-[30px] gap-5">
@@ -12,7 +48,7 @@ export default function BestSellers({ className }) {
           <div className="w-[170px] h-[170px] rounded-full bg-white flex justify-center items-center overflow-hidden mb-2">
             <img
               src={`${
-                import.meta.env.VITE_PUBLIC_URL
+                url
               }/assets/images/saller-1.png`}
               alt=""
             />
@@ -29,7 +65,7 @@ export default function BestSellers({ className }) {
           <div className="w-[170px] h-[170px] rounded-full bg-white flex justify-center items-center overflow-hidden mb-2">
             <img
               src={`${
-                import.meta.env.VITE_PUBLIC_URL
+                url
               }/assets/images/saller-2.png`}
               alt=""
             />
@@ -46,7 +82,7 @@ export default function BestSellers({ className }) {
           <div className="w-[170px] h-[170px] rounded-full bg-white flex justify-center items-center overflow-hidden mb-2">
             <img
               src={`${
-                import.meta.env.VITE_PUBLIC_URL
+                url
               }/assets/images/saller-3.png`}
               alt=""
             />
@@ -63,7 +99,7 @@ export default function BestSellers({ className }) {
           <div className="w-[170px] h-[170px] rounded-full bg-white flex justify-center items-center overflow-hidden mb-2">
             <img
               src={`${
-                import.meta.env.VITE_PUBLIC_URL
+                url
               }/assets/images/saller-4.png`}
               alt=""
             />
@@ -80,7 +116,7 @@ export default function BestSellers({ className }) {
           <div className="w-[170px] h-[170px] rounded-full bg-white flex justify-center items-center overflow-hidden mb-2">
             <img
               src={`${
-                import.meta.env.VITE_PUBLIC_URL
+                url
               }/assets/images/saller-5.png`}
               alt=""
             />
@@ -97,7 +133,7 @@ export default function BestSellers({ className }) {
           <div className="w-[170px] h-[170px] rounded-full bg-white flex justify-center items-center overflow-hidden mb-2">
             <img
               src={`${
-                import.meta.env.VITE_PUBLIC_URL
+                url
               }/assets/images/saller-6.png`}
               alt=""
             />

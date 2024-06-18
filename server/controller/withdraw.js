@@ -26,21 +26,7 @@ router.post(
         amount,
       };
 
-      try {
-        await sendMail({
-          // from: "accounts@shop0.com",
-          from: process.env.SMTP_MAIL,
-          email: seller.email,
-          subject: "Withdrawl Request",
-          html: amount,
-        });
-
-        // res.status(200).json({
-        //   success: true,
-        // });
-      } catch (error) {
-        return next(new ErrorHandler(error.message, 400));
-      }
+   
 
       const withdraw = await Withdraw.create(data);
 
@@ -165,17 +151,7 @@ router.put(
 
       await seller.save();
       if (req.body.status === "Suceeded") {
-        try {
-          await sendMail({
-            // from: "accounts@shop0.com",
-            from: process.env.SMTP_MAIL,
-            email: seller.email,
-            subject: "Payment confirmation",
-            html: `Your withdrawal request of amount KSHS: ${withdraw.amount}  has been appoved`,
-          });
-        } catch (error) {
-          return next(new ErrorHandler(error.message, 400));
-        }
+      
 
         res.status(200).json({
           success: true,

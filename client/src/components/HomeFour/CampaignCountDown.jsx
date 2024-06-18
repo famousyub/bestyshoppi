@@ -1,8 +1,18 @@
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import CountDown from "../Helpers/CountDown";
+import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 export default function CampaignCountDown({ className, lastDate }) {
   const { showDate, showHour, showMinute, showSecound } = CountDown(lastDate);
+
+  const url ="http://localhost:1001"
+
+  const [searchParams] = useSearchParams();
+  const categoryData = searchParams.get("category");
+  const [data, setData] = useState([]);
+  const dispatch = useDispatch();
+  const { allProducts, isLoading } = useSelector((state) => state.product);
 
   return (
     <div>
@@ -14,7 +24,7 @@ export default function CampaignCountDown({ className, lastDate }) {
               className="campaign-countdown h-full w-full mb-5 lg:mb-0"
               style={{
                 background: `url(${
-                  import.meta.env.VITE_PUBLIC_URL
+                  url
                 }/assets/images/campaign-cover-countdown-3.jpg) no-repeat`,
                 backgroundSize: "cover",
               }}

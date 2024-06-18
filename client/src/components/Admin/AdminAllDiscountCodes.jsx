@@ -135,8 +135,8 @@ const AdminAllDiscountCodes = () => {
         price: item.value + " %",
         status: item.status,
         shop: item.shopId,
-        startDate: item.start_date.slice(0, 10),
-        endDate: item.finish_date.slice(0, 10),
+        startDate: item.start_date,
+        endDate: item.finish_date,
       });
     });
   return (

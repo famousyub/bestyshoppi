@@ -1,4 +1,18 @@
+import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useSearchParams } from "react-router-dom";
+
 export default function DiscountBanner({ className }) {
+
+
+
+  const url ="http://localhost:1001"
+
+  const [searchParams] = useSearchParams();
+  const categoryData = searchParams.get("category");
+  const [data, setData] = useState([]);
+  const dispatch = useDispatch();
+  const { allProducts, isLoading } = useSelector((state) => state.product);
   return (
     <div
       className={`discount-banner w-full h-[307px] bg-cover  relative ${
@@ -6,7 +20,7 @@ export default function DiscountBanner({ className }) {
       }`}
       style={{
         background: `url(${
-          import.meta.env.VITE_PUBLIC_URL
+          url
         }/assets/images/discount-banner-3.jpg) no-repeat`,
         backgroundSize: "cover",
       }}
@@ -19,6 +33,8 @@ export default function DiscountBanner({ className }) {
             className="w-full h-full object-contain"
           />
         </div>
+
+        
         <div className="flex justify-center items-center w-full h-full relative xl:left-[100px]">
           <div>
             <div data-aos="fade-up">

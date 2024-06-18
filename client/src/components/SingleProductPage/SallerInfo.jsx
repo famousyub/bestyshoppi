@@ -3,6 +3,7 @@ import DataIteration from "../Helpers/DataIteration";
 import Star from "../Helpers/icons/Star";
 
 export default function SallerInfo({ products }) {
+  const url ='http://localhost:1001'
   return (
     <div className="saller-info-wrapper w-full">
       <div className="saller-info sm:flex justify-between items-center pb-[30px] border-b border-[#E8E8E8]">
@@ -10,7 +11,7 @@ export default function SallerInfo({ products }) {
           <div className="saller w-[73px] h-[73px] rounded-full overflow-hidden">
             <img
               src={`${
-                import.meta.env.VITE_PUBLIC_URL
+                url
               }/assets/images/comment-user-1.png`}
               alt="saller"
               className="w-full h-full object-cover"

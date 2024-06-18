@@ -11,6 +11,7 @@ import { removeFromWishList } from "../../redux/actions/wishList";
 import { toast } from "react-toastify";
 import WishListImage from "../../assets/images/Checklist-pana.png";
 import { addToCart } from "../../redux/actions/cart";
+import HeaderOne from "../Partials/Headers/HeaderOne";
 
 const WishList = ({ setOpenWishList }) => {
   const { wishList } = useSelector((state) => state.wishList);
@@ -31,6 +32,8 @@ const WishList = ({ setOpenWishList }) => {
    
     
   return (
+    <>
+    <HeaderOne />
     <div className="fixed top-0 w-full left-0 h-screen z-50 bg-[#0000004b]">
       <div className="fixed top-0 right-0 min-h-full  w-[100%] sm:w-[25%] shadow-sm bg-white flex flex-col justify-between">
         {wishList && wishList.length === 0 ? (
@@ -86,6 +89,7 @@ const WishList = ({ setOpenWishList }) => {
         )}
       </div>
     </div>
+    </>
   );
 };
 
@@ -111,7 +115,7 @@ const CartSingle = ({ data, removeFromWishListHandler, addToCartHandler }) => {
         <div className="pl-[5px]">
           <h1>{data.name}</h1>
           <h4 className="font-[600] text-[17px] pt-[3px] text-[#d02222] font-Roboto">
-            KSHS {totalPrice}
+            Dt :  {totalPrice}  -dinars 
           </h4>
         </div>
         <div>

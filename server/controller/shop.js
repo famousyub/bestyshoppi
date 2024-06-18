@@ -605,14 +605,14 @@ router.put(
       seller.password = newPassword;
 
       const message = `Hello ${seller.name} your account has been updated successfully  `;
-      await sendMail({
+      /*await sendMail({
         // from: "accounts@shop0.com",
         from: process.env.SMTP_MAIL,
         email: seller.email,
         subject: "shopO Account password updated",
         html: message,
       });
-
+ */
       await seller.save();
 
       return res.status(200).json({
@@ -659,12 +659,12 @@ router.post(
 
         const message = `Your password reset token is :- \n\n ${resetPasswordUrl}`;
 
-        await sendMail({
+       /* await sendMail({
           from: process.env.SMTP_MAIL,
           email: seller.email,
           subject: `shopO Password Recovery`,
           html: message,
-        });
+        });*/
         // res.status(201).json({
         //   success: true,
         // });
@@ -726,13 +726,13 @@ router.put(
 
       await seller.save();
       const message = `Hello ${seller.name} your account password has been changed  `;
-      await sendMail({
+     /* await sendMail({
         // from: "accounts@shop0.com",
         from: process.env.SMTP_MAIL,
         email: seller.email,
         subject: "shopO Password Reset success",
         html: message,
-      });
+      });*/
 
       res.status(200).json({
         success: true,
@@ -832,13 +832,15 @@ router.put(
       shop.isActive = status;
 
       const message = `Hello ${shop.name} your account has been activated  `;
-      await sendMail({
+     /* await sendMail({
         // from: "accounts@shop0.com",
         from: process.env.SMTP_MAIL,
         email: shop.email,
         subject: "Account Activation",
         html: message,
       });
+
+      */
 
       await shop.save();
       res.status(200).json({
@@ -872,13 +874,13 @@ router.put(
       shop.isActive = status;
 
       const message = `Hello ${shop.name} your account has been deactivated  `;
-      await sendMail({
+      /*await sendMail({
         // from: "accounts@shop0.com",
         from: process.env.SMTP_MAIL,
         email: shop.email,
         subject: "Account Deactivation",
         html: message,
-      });
+      });*/
 
       await shop.save();
       res.status(200).json({
@@ -931,14 +933,14 @@ router.delete(
         });
       }
       const message = `Hello ${shop.name} your account has been deleted  `;
-      await sendMail({
+     /* await sendMail({
         // from: "accounts@shop0.com",
         from: process.env.SMTP_MAIL,
         email: shop.email,
         subject: "Account Activation",
         html: message,
       });
-
+*/
       res.status(200).json({
         success: true,
         message: `Shop deleted Successfully `,

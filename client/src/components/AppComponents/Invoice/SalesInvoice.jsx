@@ -120,10 +120,10 @@ const SalesInvoice = () => {
           <div className="flex justify-between border-b border-gray-500 pb-8">
             <div className="flex flex-col">
               <h2>Bill From:</h2>
-              <p>ShopO Multi-vendor System</p>
-              <p>4517 Moi Avenue, Sports House R453</p>
-              <p>Nairobi, Kenya</p>
-              <p>shop0.system@gmail.com</p>
+              <p>Shop Multi-vendor System</p>
+              <p>8000 Moi Avenue, Sports House R453</p>
+              <p>Zied , Tunisa</p>
+              <p>zied-shop.system@gmail.com</p>
             </div>
             <img src={logo} alt="limifood logo" className="w-36 h-16" />
           </div>
@@ -198,11 +198,12 @@ const SalesInvoice = () => {
                         <td className="px-6 py-4">{item.qty}</td>
                         <td className="px-6 py-4">
                           KSH: {item?.discountPrice?.toLocaleString()}
+                          <h6 className="badge badge-primary">dt</h6>
                         </td>
                         {/* Assuming qty is stored in the item itself */}
                         <td className="px-6 py-4">
                           KSHS:{" "}
-                          {(item.qty * item.discountPrice)?.toLocaleString()}
+                          {(item.qty * item.discountPrice)?.toLocaleString()}  <h6 className="badge badge-primary">dt</h6>
                         </td>
                       </tr>
                     );

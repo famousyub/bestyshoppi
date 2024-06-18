@@ -1,6 +1,8 @@
 import InputQuantityCom from "../Helpers/InputQuantityCom";
 
 export default function ProductsTable({ className }) {
+
+  const url ='http://localhost:1001'
   return (
     <div className={`w-full ${className || ""}`}>
       <div className="relative w-full overflow-x-auto border border-[#EDEDED]">
@@ -25,7 +27,7 @@ export default function ProductsTable({ className }) {
                   <div className="w-[80px] h-[80px] overflow-hidden flex justify-center items-center border border-[#EDEDED]">
                     <img
                       src={`${
-                        import.meta.env.VITE_PUBLIC_URL
+                        url
                       }/assets/images/product-img-1.jpg`}
                       alt="product"
                       className="w-full h-full object-contain"
@@ -88,7 +90,7 @@ export default function ProductsTable({ className }) {
                   <div className="w-[80px] h-[80px] overflow-hidden flex justify-center items-center border border-[#EDEDED]">
                     <img
                       src={`${
-                        import.meta.env.VITE_PUBLIC_URL
+                        url
                       }/assets/images/product-img-2.jpg`}
                       alt="product"
                       className="w-full h-full object-contain"
@@ -151,7 +153,7 @@ export default function ProductsTable({ className }) {
                   <div className="w-[80px] h-[80px] overflow-hidden flex justify-center items-center border border-[#EDEDED]">
                     <img
                       src={`${
-                        import.meta.env.VITE_PUBLIC_URL
+                        url
                       }/assets/images/product-img-3.jpg`}
                       alt="product"
                       className="w-full h-full object-contain"

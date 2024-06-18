@@ -8,7 +8,7 @@ export default function CampaignCountDown({
   appscreen,
 }) {
   const { showDate, showHour, showMinute, showSecound } = CountDown(lastDate);
-
+  const url ='http://localhost:1001'
   return (
     <div>
       <div className={`w-full lg:h-[460px] ${className || ""}`}>
@@ -19,7 +19,7 @@ export default function CampaignCountDown({
               className="campaign-countdown lg:w-1/2 h-full w-full mb-5 lg:mb-0"
               style={{
                 background: `url(${
-                  import.meta.env.VITE_PUBLIC_URL
+                  url
                 }/assets/images/campaign-cover-countdown.jpg) no-repeat`,
                 backgroundSize: "cover",
               }}
@@ -114,7 +114,7 @@ export default function CampaignCountDown({
                 background: `url(${
                   counterbg ||
                   `${
-                    import.meta.env.VITE_PUBLIC_URL
+                    url
                   }/assets/images/download-app-cover.png`
                 }) no-repeat`,
                 backgroundSize: "cover",
@@ -139,7 +139,7 @@ export default function CampaignCountDown({
                           width="170"
                           height="69"
                           src={`${
-                            import.meta.env.VITE_PUBLIC_URL
+                            url
                           }/assets/images/play-store.png`}
                           alt=""
                         />
@@ -151,7 +151,7 @@ export default function CampaignCountDown({
                           width="170"
                           height="69"
                           src={`${
-                            import.meta.env.VITE_PUBLIC_URL
+                            url
                           }/assets/images/apple-store.png`}
                           alt=""
                         />
@@ -164,7 +164,7 @@ export default function CampaignCountDown({
                     src={
                       appscreen ||
                       `${
-                        import.meta.env.VITE_PUBLIC_URL
+                        url
                       }/assets/images/app-screen.png`
                     }
                     alt=""

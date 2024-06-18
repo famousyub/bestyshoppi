@@ -1,4 +1,40 @@
 export default function BrandSection({ className, sectionTitle }) {
+
+
+
+
+  const url ="http://localhost:1001"
+
+  
+     const [shops,setShops]  = useState([]);
+
+  const [categories,setCategories] = useState([]);
+ 
+
+  useEffect(()=>{
+
+    const cathelpers  = []; 
+    const shopshelpers =[] ; 
+   
+
+    allProducts.map((el, index) =>{
+
+      shopshelpers.push(el.shop);
+
+
+      cathelpers.push (el.category);
+
+    })
+    setShops(shopshelpers);
+    setCategories(cathelpers);
+ 
+
+ })
+
+
+
+
+
   return (
     <div data-aos="fade-up" className={`w-full ${className || ""}`}>
       <div className="container-x mx-auto">
@@ -14,7 +50,7 @@ export default function BrandSection({ className, sectionTitle }) {
             <div className="w-full h-[130px] bg-white border border-primarygray flex justify-center items-center">
               <img
                 src={`${
-                  import.meta.env.VITE_PUBLIC_URL
+                  url
                 }/assets/images/brand-1.png`}
                 alt="logo"
               />
@@ -24,7 +60,7 @@ export default function BrandSection({ className, sectionTitle }) {
             <div className="w-full h-[130px] bg-white border border-primarygray flex justify-center items-center">
               <img
                 src={`${
-                  import.meta.env.VITE_PUBLIC_URL
+                  url
                 }/assets/images/brand-2.png`}
                 alt="logo"
               />
@@ -34,7 +70,7 @@ export default function BrandSection({ className, sectionTitle }) {
             <div className="w-full h-[130px] bg-white border border-primarygray flex justify-center items-center">
               <img
                 src={`${
-                  import.meta.env.VITE_PUBLIC_URL
+                  url
                 }/assets/images/brand-3.png`}
                 alt="logo"
               />
@@ -44,7 +80,7 @@ export default function BrandSection({ className, sectionTitle }) {
             <div className="w-full h-[130px] bg-white border border-primarygray flex justify-center items-center">
               <img
                 src={`${
-                  import.meta.env.VITE_PUBLIC_URL
+                  url
                 }/assets/images/brand-4.png`}
                 alt="logo"
               />
@@ -54,7 +90,7 @@ export default function BrandSection({ className, sectionTitle }) {
             <div className="w-full h-[130px] bg-white border border-primarygray flex justify-center items-center">
               <img
                 src={`${
-                  import.meta.env.VITE_PUBLIC_URL
+                  url
                 }/assets/images/brand-5.png`}
                 alt="logo"
               />
@@ -64,7 +100,7 @@ export default function BrandSection({ className, sectionTitle }) {
             <div className="w-full h-[130px] bg-white border border-primarygray flex justify-center items-center">
               <img
                 src={`${
-                  import.meta.env.VITE_PUBLIC_URL
+                  url
                 }/assets/images/brand-6.png`}
                 alt="logo"
               />
@@ -74,7 +110,7 @@ export default function BrandSection({ className, sectionTitle }) {
             <div className="w-full h-[130px] bg-white border border-primarygray flex justify-center items-center">
               <img
                 src={`${
-                  import.meta.env.VITE_PUBLIC_URL
+                  url
                 }/assets/images/brand-7.png`}
                 alt="logo"
               />
@@ -84,7 +120,7 @@ export default function BrandSection({ className, sectionTitle }) {
             <div className="w-full h-[130px] bg-white border border-primarygray flex justify-center items-center">
               <img
                 src={`${
-                  import.meta.env.VITE_PUBLIC_URL
+                  url
                 }/assets/images/brand-8.png`}
                 alt="logo"
               />
@@ -94,7 +130,7 @@ export default function BrandSection({ className, sectionTitle }) {
             <div className="w-full h-[130px] bg-white border border-primarygray flex justify-center items-center">
               <img
                 src={`${
-                  import.meta.env.VITE_PUBLIC_URL
+                  url
                 }/assets/images/brand-9.png`}
                 alt="logo"
               />
@@ -104,7 +140,7 @@ export default function BrandSection({ className, sectionTitle }) {
             <div className="w-full h-[130px] bg-white border border-primarygray flex justify-center items-center">
               <img
                 src={`${
-                  import.meta.env.VITE_PUBLIC_URL
+                  url
                 }/assets/images/brand-10.png`}
                 alt="logo"
               />
@@ -114,7 +150,7 @@ export default function BrandSection({ className, sectionTitle }) {
             <div className="w-full h-[130px] bg-white border border-primarygray flex justify-center items-center">
               <img
                 src={`${
-                  import.meta.env.VITE_PUBLIC_URL
+                  url
                 }/assets/images/brand-11.png`}
                 alt="logo"
               />
@@ -124,13 +160,41 @@ export default function BrandSection({ className, sectionTitle }) {
             <div className="w-full h-[130px] bg-white border border-primarygray flex justify-center items-center">
               <img
                 src={`${
-                  import.meta.env.VITE_PUBLIC_URL
+                  url
                 }/assets/images/brand-12.png`}
                 alt="logo"
               />
             </div>
           </div>
+
+
+          {shops.map((el,index) =>{
+                <div className="item">
+                <div className="w-full h-[130px] bg-white border border-primarygray flex justify-center items-center">
+                <img src={`${backend_url}/uploads/${
+                                  el.avatar.filename
+                                }`}    height={70} width={75} />
+                </div>
+              </div>
+          })}
+
+
+          {categories.map((el,index) =>{
+               <div className="item">
+               <div className="w-full h-[130px] bg-white border border-primarygray flex justify-center items-center">
+                 <img
+                   src={`${
+                     url
+                   }/assets/images/brand-12.png`}
+                   alt="logo"
+                 />
+                 {el.value}
+               </div>
+             </div>
+          }) }
         </div>
+
+
       </div>
     </div>
   );

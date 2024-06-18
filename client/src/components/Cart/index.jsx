@@ -1,4 +1,6 @@
 export default function Cart({ className, type }) {
+
+  const url ='http://localhost:1001'
   return (
     <>
       <div
@@ -15,7 +17,7 @@ export default function Cart({ className, type }) {
                   <div className="w-[65px] h-full">
                     <img
                       src={`${
-                        import.meta.env.VITE_PUBLIC_URL
+                        url
                       }/assets/images/product-img-1.jpg`}
                       alt=""
                       className="w-full h-full object-contain"
@@ -51,7 +53,7 @@ export default function Cart({ className, type }) {
                   <div className="w-[65px] h-full">
                     <img
                       src={`${
-                        import.meta.env.VITE_PUBLIC_URL
+                        url
                       }/assets/images/product-img-1.jpg`}
                       alt=""
                       className="w-full h-full object-contain"
@@ -87,7 +89,7 @@ export default function Cart({ className, type }) {
                   <div className="w-[65px] h-full">
                     <img
                       src={`${
-                        import.meta.env.VITE_PUBLIC_URL
+                        url
                       }/assets/images/product-img-1.jpg`}
                       alt=""
                       className="w-full h-full object-contain"
@@ -123,7 +125,7 @@ export default function Cart({ className, type }) {
                   <div className="w-[65px] h-full">
                     <img
                       src={`${
-                        import.meta.env.VITE_PUBLIC_URL
+                        url
                       }/assets/images/product-img-1.jpg`}
                       alt=""
                       className="w-full h-full object-contain"
@@ -159,7 +161,7 @@ export default function Cart({ className, type }) {
                   <div className="w-[65px] h-full">
                     <img
                       src={`${
-                        import.meta.env.VITE_PUBLIC_URL
+                        url
                       }/assets/images/product-img-1.jpg`}
                       alt=""
                       className="w-full h-full object-contain"
@@ -195,7 +197,7 @@ export default function Cart({ className, type }) {
                   <div className="w-[65px] h-full">
                     <img
                       src={`${
-                        import.meta.env.VITE_PUBLIC_URL
+                        url
                       }/assets/images/product-img-1.jpg`}
                       alt=""
                       className="w-full h-full object-contain"

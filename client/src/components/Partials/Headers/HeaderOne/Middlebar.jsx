@@ -1,13 +1,30 @@
+import { useSelector } from "react-redux";
 import Cart from "../../../Cart";
 import Compair from "../../../Helpers/icons/Compair";
 import ThinBag from "../../../Helpers/icons/ThinBag";
 import ThinLove from "../../../Helpers/icons/ThinLove";
 import ThinPeople from "../../../Helpers/icons/ThinPeople";
 import SearchBox from "../../../Helpers/SearchBox";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import { useState } from "react";
 
 export default function Middlebar({ className, type }) {
   const url ="http://localhost:1001";
+
+  const { allProducts } = useSelector((state) => state.product);
+  const { cart } = useSelector((state) => state.cart);
+  const { wishList } = useSelector((state) => state.wishList);
+  const { id } = useParams();
+  const { isAuthenticated, user } = useSelector((state) => state.user);
+  const { isSeller, seller } = useSelector((state) => state.seller);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [searchData, setSearchData] = useState(null);
+  const [active, setActive] = useState(false);
+  const [dropDown, setDropDown] = useState(false);
+  const [dropDownshopp, setDropDownShop] = useState(false);
+  const [openCart, setOpenCart] = useState(false);
+  const [openWishlist, setOpenWishList] = useState(false);
+  const [open, setOpen] = useState(false);
   return (
     <div className={`w-full h-[86px] bg-white ${className}`}>
       <div className="container-x mx-auto h-full">
@@ -64,7 +81,7 @@ export default function Middlebar({ className, type }) {
                     type === 3 ? "bg-qh3-blue text-white" : "bg-qyellow"
                   }`}
                 >
-                  2
+                 {cart && cart.length}
                 </span>
               </div>
               <div className="favorite relative">
@@ -78,7 +95,7 @@ export default function Middlebar({ className, type }) {
                     type === 3 ? "bg-qh3-blue text-white" : "bg-qyellow"
                   }`}
                 >
-                  1
+                  {wishList && wishList.length}
                 </span>
               </div>
               <div className="cart-wrapper group relative py-4">
@@ -93,7 +110,7 @@ export default function Middlebar({ className, type }) {
                       type === 3 ? "bg-qh3-blue text-white" : "bg-qyellow"
                     }`}
                   >
-                    15
+                    {wishList && wishList.length}
                   </span>
                 </div>
                 {/* <div className="fixed left-0 top-0 w-full h-full z-40"></div> */}

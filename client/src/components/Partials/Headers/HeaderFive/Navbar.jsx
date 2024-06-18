@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Arrow from "../../../Helpers/icons/Arrow";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { getAllProducts } from "../../../../redux/actions/product";
 import { categoriesData } from "../../../../static/data";
 import styles from "../../../../styles/style";
+import { backend_url } from "../../../../config";
 
 export default function Navbar({ className }) {
 
@@ -15,7 +16,7 @@ export default function Navbar({ className }) {
   // if (categoryToggle && getItems > 0) {
   //   setSize(`${40 * getItems}px`);
   // }
-
+  const { allProducts } = useSelector((state) => state.product);
 
   const dispatch = useDispatch()
 
@@ -275,34 +276,29 @@ export default function Navbar({ className }) {
                                     </span>
                                   </a>
                                 </li>
-                                <li>
-                                  <a href="#">
-                                    <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qyellow hover:text-qyellow">
-                                      Shop Fullwidth
-                                    </span>
-                                  </a>
-                                </li>
-                                <li>
-                                  <a href="#">
-                                    <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qyellow hover:text-qyellow">
-                                      Shop Category Icon
-                                    </span>
-                                  </a>
-                                </li>
-                                <li>
-                                  <a href="#">
-                                    <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qyellow hover:text-qyellow">
-                                      Shop Category Icon
-                                    </span>
-                                  </a>
-                                </li>
-                                <li>
-                                  <a href="#">
-                                    <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qyellow hover:text-qyellow">
-                                      Shop List View
-                                    </span>
-                                  </a>
-                                </li>
+                                {allProducts && allProducts.map((el, index) => ( 
+
+
+<li>
+<Link to={`/shop/preview/${el.shop._id}`}>
+  <span
+    className={`text-qgray text-sm font-400 border-b border-transparent   ${
+     
+         "hover:text-qyellow hover:border-qyellow"
+    }`}
+  >
+    {el.shop.name}
+
+    <img src={`${backend_url}/uploads/${
+      el.shop.avatar.filename
+    }`}    height={70} width={75} />
+  </span>
+</Link>
+</li>
+
+
+
+)) }
                               </ul>
                             </div>
                           </div>

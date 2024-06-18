@@ -73,7 +73,7 @@ export default function AllProductPage() {
     if (categoryData === null) {
       const d =
         allProducts &&
-        [...allProducts].sort((a, b) => a.total_sold - b.total_sold);
+        [...allProducts].sort((a, b) => a.originalPrice - b.originalPrice);
       setData(d);
 
 

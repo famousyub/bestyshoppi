@@ -307,34 +307,28 @@ export default function Navbar({ className }) {
                             </div>
                             <div className="category-items">
                               <ul className="flex flex-col space-y-2">
-                                <li>
-                                  <a href="#">
-                                    <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qyellow hover:text-qyellow">
-                                      Horizonral Thumbnail
-                                    </span>
-                                  </a>
-                                </li>
-                                <li>
-                                  <a href="#">
-                                    <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qyellow hover:text-qyellow">
-                                      Vertical Thumbnail
-                                    </span>
-                                  </a>
-                                </li>
-                                <li>
-                                  <a href="#">
-                                    <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qyellow hover:text-qyellow">
-                                      Gallery Thumbnail
-                                    </span>
-                                  </a>
-                                </li>
-                                <li>
-                                  <a href="#">
-                                    <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qyellow hover:text-qyellow">
-                                      Sticky Summary
-                                    </span>
-                                  </a>
-                                </li>
+                              {allProducts && allProducts.map((el, index) => ( 
+
+
+<li>
+<Link to={`/shop/preview/${el.shop._id}`}>
+  <span
+    className={`text-qgray text-sm font-400 border-b border-transparent   ${
+     
+         "hover:text-qyellow hover:border-qyellow"
+    }`}
+  >
+    {el.shop.name}
+
+    <img src={`${backend_url}/uploads/${
+      el.shop.avatar.filename
+    }`}    height={70} width={75} />
+  </span>
+</Link>
+</li> 
+                              ))}
+
+
                               </ul>
                             </div>
                           </div>
@@ -346,34 +340,29 @@ export default function Navbar({ className }) {
                             </div>
                             <div className="category-items">
                               <ul className="flex flex-col space-y-2">
-                                <li>
-                                  <a href="#">
-                                    <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qyellow hover:text-qyellow">
-                                      Phone & Tablet
-                                    </span>
-                                  </a>
-                                </li>
-                                <li>
-                                  <a href="#">
-                                    <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qyellow hover:text-qyellow">
-                                      Gaming & Sports
-                                    </span>
-                                  </a>
-                                </li>
-                                <li>
-                                  <a href="#">
-                                    <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qyellow hover:text-qyellow">
-                                      Home Appliance
-                                    </span>
-                                  </a>
-                                </li>
-                                <li>
-                                  <a href="#">
-                                    <span className="text-qgray text-sm font-400 border-b border-transparent hover:border-qyellow hover:text-qyellow">
-                                      Fashion Clothes
-                                    </span>
-                                  </a>
-                                </li>
+                              {allProducts && allProducts.map((el, index) => ( 
+
+
+<li>
+<Link to="/all-products">
+  <span
+    className={`text-qgray text-sm font-400 border-b border-transparent   ${
+    
+        "hover:text-qyellow hover:border-qyellow"
+    }`}
+  >
+    {el.category}
+
+    <img src={`${
+      el.images[0].url
+    }`}    height={70} width={75} />
+  </span>
+</Link>
+</li>
+
+
+
+)) }
                               </ul>
                             </div>
                           </div>

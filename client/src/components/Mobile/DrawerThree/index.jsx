@@ -1,9 +1,26 @@
 import { useState } from "react";
 import Compair from "../../Helpers/icons/Compair";
 import ThinLove from "../../Helpers/icons/ThinLove";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { getAllProducts } from "../../../redux/actions/product";
 
 export default function DrawerThree({ className, open, action }) {
+
+  const { allProducts } = useSelector((state) => state.product);
+  const { cart } = useSelector((state) => state.cart);
+  const { wishList } = useSelector((state) => state.wishList);
+
+   const dispatch = useDispatch();
+   const navigate  = useNavigate()
+
+  const submitHandle = (i) => {
+    dispatch(getAllProducts());
+    setDropDown(false);
+    navigate(`/products?category=${i.title}`);
+    // window.location.reload();
+  };
+
   const [tab, setTab] = useState("category");
   return (
     <>
@@ -33,7 +50,7 @@ export default function DrawerThree({ className, open, action }) {
                     </span>
                   </Link>
                   <span className="w-[18px] h-[18px] text-white rounded-full bg-qh3-blue absolute -top-2.5 -right-2.5 flex justify-center items-center text-[9px]">
-                    2
+                    {wishList && wishList.length}
                   </span>
                 </div>
                 <div className="favorite relative">
@@ -43,7 +60,7 @@ export default function DrawerThree({ className, open, action }) {
                     </span>
                   </Link>
                   <span className="w-[18px] h-[18px] text-white rounded-full bg-qh3-blue absolute -top-2.5 -right-2.5 flex justify-center items-center text-[9px]">
-                    1
+                    {cart && cart.length}
                   </span>
                 </div>
               </div>

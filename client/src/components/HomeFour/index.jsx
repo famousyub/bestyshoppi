@@ -11,6 +11,7 @@ import SectionStyleFour from "../Helpers/SectionStyleFour";
 import { useSearchParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllProducts } from "../../redux/actions/product";
+import ProductPagefilter from "../Appfilter/Index";
 
 function Homefour() {
   const { products1 } = datas;
@@ -96,6 +97,7 @@ function Homefour() {
         seeMoreUrl="/all-products"
         className="mb-[60px]"
       />
+      <ProductPagefilter />
     </LayoutHomeFour>
   );
 }

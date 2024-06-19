@@ -114,6 +114,9 @@ import TermsCondition from "./components/TermsCondition";
 import About from "./components/About";
 import WishList from "./components/wishlist/WishList";
 import ApplIst from "./components/applist/Index";
+import AllProductfilterPage from "./components/Mproduct/Index";
+
+import  ProductPagefilter  from './components/Appfilter/Index';
 
 function App2() {
   const { loading, isAuthenticated } = useSelector((state) => state.user);
@@ -183,8 +186,8 @@ function App2() {
                   }
                 />
 
-
-
+                  <Route path="/appfilter" element={<ProductPagefilter />} />
+                  <Route path="/productfil" element={<AllProductfilterPage />} />
                   <Route path="/privacy-policy" element={<PrivacyPolicy />} />
                   <Route path="/terms-condition" element={<TermsCondition />} />
                   <Route path="/shop-list" element={<Homeone />} />

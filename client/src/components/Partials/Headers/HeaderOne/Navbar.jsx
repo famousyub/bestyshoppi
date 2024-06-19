@@ -402,6 +402,22 @@ export default function Navbar({ className, type }) {
                                     </span>
                                   </Link>
                                 </li>
+                               
+                                <li>
+                                  <Link to="/productfil">
+                                    <span
+                                      className={`text-qgray text-sm font-400 border-b border-transparent   ${
+                                        type === 3
+                                          ? "hover:text-qh3-blue hover:border-qh3-blue"
+                                          : "hover:text-qyellow hover:border-qyellow"
+                                      }`}
+                                    >
+                                      productfil
+                                    </span>
+                                  </Link>
+                                </li>
+
+                                
                                 <li>
                                   <Link to="/home-four">
                                     <span

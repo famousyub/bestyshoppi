@@ -11,6 +11,7 @@ import LayoutHomeFive from "../Partials/LayoutHomeFive";
 import { getAllProducts } from "../../redux/actions/product";
 import { useDispatch, useSelector } from "react-redux";
 import { useSearchParams } from "react-router-dom";
+import MyFilterData from "./MyFilterData";
 
 function HomeFive() {
   const { products1 } = datas;
@@ -79,6 +80,10 @@ function HomeFive() {
         ads={[`${url}/assets/images/ads-3.png`]}
         className="products-ads-section mb-[60px]"
       />
+
+
+
+<MyFilterData />
       <SectionStyleThreeHmFour
         sectionTitle="New Arrival"
         seeMoreUrl="/all-products"

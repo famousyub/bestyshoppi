@@ -8,6 +8,7 @@ import ProductsFilter from "./ProductsFilter";
 import { useSearchParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllProducts } from "../../redux/actions/product";
+import MyFilter from "./MyFilter";
 
 export default function AllProductPage() {
   const [filters, setFilter] = useState({
@@ -113,10 +114,14 @@ export default function AllProductPage() {
     <>
       <Layout>
         <div className="products-page-wrapper w-full">
+        <MyFilter />
           <div className="container-x mx-auto">
             <BreadcrumbCom />
             <div className="w-full lg:flex lg:space-x-[30px]">
               <div className="lg:w-[270px]">
+
+
+              
                 <ProductsFilter
                   filterToggle={filterToggle}
                   filterToggleHandler={() => setToggle(!filterToggle)}
@@ -223,6 +228,7 @@ export default function AllProductPage() {
               </div>
             </div>
           </div>
+          
         </div>
       </Layout>
     </>

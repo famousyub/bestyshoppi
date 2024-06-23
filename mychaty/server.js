@@ -1,4 +1,4 @@
-const io = require('socket.io')(3000) // create server
+const io = require('socket.io')(3003) // create server
 
 const users = {}
 

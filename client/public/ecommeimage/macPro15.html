@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>e-cart/laptops</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="nav.css">
+    <style>
+
+    * {
+    box-sizing: border-box;
+    }
+
+
+    .column {
+      float: left;
+      width: 33.33%;
+      padding: 5px;
+    }
+
+    .row .coloum a {
+      color: #f2f2f2;
+      text-decoration: none;
+    }
+
+    /* Clearfix (clear floats) */
+    .row::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+    /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 500px) {
+    .column {
+      width: 100%;
+    }}
+
+    .but {
+  padding: 15px 25px;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.but:hover {background-color: #3e8e41}
+
+.but:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+  </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <img src="images/ecartimg.jpg" style="height:40px;width:150px"alt="">
+    <logo align="right" style="font-family: Comic Sans MS, cursive, sans-serif;font-size: 30px;color: grey;"><i>.com</i></logo>
+
+    <div class="navbar">
+      <div class="topnav">
+        <a href="home.html">Home</a>
+        <button class="open-button" onclick="openForm()">Log in</button>
+
+        <div class="form-popup" id="myForm">
+          <form class="form-container">
+            <h1>Log in</h1>
+
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="email" required>
+
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required>
+
+            <button type="submit" class="btn">Log in</button>
+            <center><h3>-or-</h3><h3>Create an Account</h3></center>
+            <button type="link" class="btn" onclick="signUp()">Sign up</button>
+            <p id="demo"></p>
+            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+          </form>
+        </div>
+
+        <a id="myBtn">Members</a>
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+          <!-- Modal content -->
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <p><center><i>-Created by-</i><br><br><b>Aadesh Dutta -160102010<br>
+              Riturag Saikia -160102017<br>Bharat Bhushan Saikia -160102018</b></center></p>
+            </div>
+          </div>
+          <div class="dropdown">
+            <button class="dropbtn">Categories</button>
+            <div class="dropdown-content">
+              <a href="laptop.html">Laptops</a>
+              <a href="phones.html">Smart Phones</a>
+              <a href="camera.html">Camera</a>
+              <a href="tablets.html">Tablets</a>
+            </div>
+          </div>
+
+          <div class="search-container">
+            <form action="/action_page.php">
+              <input type="text" placeholder="Search..." name="search">
+            </form>
+          </div>
+        </div>
+      </div><br>
+
+      <h1><center>Apple Macbook pro (15 inch)</center></h1>
+      <h2><p><i>price: </i> <b>  ₹ 2,15,000.00</b><img src="images\apple-macbook-pro-15-inch-2017-14.jpg"
+        alt="Smiley face" width="500px" height="500px" align="left" hspace="50px"><br>
+      <ul>
+        <li>2.6GHz 6‑core 8th‑generation Intel Core i7 processor</li>
+          <li>Turbo Boost up to 4.3GHz</li>
+          <li>Retina display with True Tone</li>
+          <li>Touch Bar and Touch ID</li>
+          <li>Radeon Pro 560X with 4GB of GDDR5 memory</li>
+          <li>16GB 2400MHz DDR4 memory</li>
+          <li>512GB SSD storage</li>
+          <li>Four Thunderbolt 3 ports</li>
+          <li>Backlit Keyboard - US English</li>
+      </ul>
+      <i>What's in the box</i>
+      <ul>
+        <li>15-inch MacBook Pro</li>
+        <li>USB-C Charge Cable (2 m)</li>
+        <li>87W USB-C Power Adapter</li></ul></p></h2>
+
+      <a href="home.html"><button class="but">BUY</button></a><br><br>
+
+
+            <div class="footer">
+              <a href="sell.html" align="left">Register as a seller</a><br>
+              <a href="home.html" align="left">About us</a><br>
+              <a href="home.html" align="left">Contact</a><br>
+              <a href="home.html" align="left">FAQ</a><br>
+              <center>
+              <a href="share.html"><img class="share" src="images/facebook.jpg" style="height:20px;width:20px"></a>
+              <a href="share.html"><img class="share" src="images/twitter.jpg" style="height:20px;width:20px"></a>
+              <a href="share.html"><img class="share" src="images/insta.jpg" style="height:20px;width:20px"></a>
+              <a href="share.html"><img class="share" src="images/whatsapp.jpg" style="height:20px;width:20px"></a>
+              <p>e-cart is a shopping site where we can buy all kinds of electronic goods.<br>
+                While using this site, you agree to have read and accepted our terms of use, cookie and privacy policy. <br>
+                Copyright @2019. All Rights Reserved.</p>
+              </center>
+            </div>
+
+
+            <script>
+            function openForm() {
+              document.getElementById("myForm").style.display = "block";
+            }
+            function signUp() {
+              var str = "create an new account";
+              var result = str.link("signUp.html");
+              document.getElementById("demo").innerHTML = result;
+            }
+            function closeForm() {
+              document.getElementById("myForm").style.display = "none";
+            }
+            // Get the modal
+            var modal = document.getElementById('myModal');
+
+            // Get the button that opens the modal
+            var btn = document.getElementById("myBtn");
+
+            // Get the <span> element that closes the modal
+            var span = document.getElementsByClassName("close")[0];
+
+            // When the user clicks the button, open the modal
+            btn.onclick = function() {
+              modal.style.display = "block";
+            }
+
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function() {
+              modal.style.display = "none";
+            }
+
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+              if (event.target == modal) {
+                modal.style.display = "none";
+              }
+            }
+            </script>
+        </body>
+      </html>

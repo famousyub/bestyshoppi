@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>e-cart/laptops</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="nav.css">
+    <style>
+    * {
+    box-sizing: border-box;
+    }
+
+
+    .column {
+      float: left;
+      width: 33.33%;
+      padding: 5px;
+    }
+
+    .row .coloum a {
+      color: #f2f2f2;
+      text-decoration: none;
+    }
+
+    /* Clearfix (clear floats) */
+    .row::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+    /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 500px) {
+    .column {
+      width: 100%;
+    }
+  }
+  </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <img src="images/ecartimg.jpg" style="height:40px;width:150px"alt="">
+    <logo align="right" style="font-family: Comic Sans MS, cursive, sans-serif;font-size: 30px;color: grey;"><i>.com</i></logo>
+
+    <div class="navbar">
+      <div class="topnav">
+        <a href="home.html">Home</a>
+        <button class="open-button" onclick="openForm()">Log in</button>
+
+        <div class="form-popup" id="myForm">
+          <form class="form-container">
+            <h1>Log in</h1>
+
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="email" required>
+
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required>
+
+            <button type="submit" class="btn">Log in</button>
+            <center><h3>-or-</h3><h3>Create an Account</h3></center>
+            <button type="link" class="btn" onclick="signUp()">Sign up</button>
+            <p id="demo"></p>
+            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+          </form>
+        </div>
+
+        <a id="myBtn">Members</a>
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+          <!-- Modal content -->
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <p><center><i>-Created by-</i><br><br><b>Aadesh Dutta -160102010<br>
+              Riturag Saikia -160102017<br>Bharat Bhushan Saikia -160102018</b></center></p>
+            </div>
+          </div>
+          <div class="dropdown">
+            <button class="dropbtn">Categories</button>
+            <div class="dropdown-content">
+              <a href="laptop.html">Laptops</a>
+              <a href="phones.html">Smart Phones</a>
+              <a href="camera.html">Camera</a>
+              <a href="tablets.html">Tablets</a>
+            </div>
+          </div>
+
+          <div class="search-container">
+            <form action="/action_page.php">
+              <input type="text" placeholder="Search..." name="search">
+            </form>
+          </div>
+        </div>
+      </div><br>
+
+
+      <center><h1>Apple</h1></center>
+      <div class="row">
+        <div class="column">
+          <a href="home.html">
+            <img src="images/apple-macbook-pro-15-inch-2017-14.jpg" alt="Snow" style="width:100%">
+            <center><p>Apple Macbook pro (15 inch)<br>Rs 2,15,000</p></center>
+          </a>
+        </div>
+        <div class="column">
+          <a href="home.html">
+            <img src="images/apple-macbook-air.jpg" alt="Snow" style="width:100%">
+            <center><p>Apple Macbook air (13 inch)<br>Rs 69,900</p></center>
+          </a>
+        </div>
+        <div class="column">
+          <a href="home.html">
+            <img src="images/apple-macbook-air-11-inch.jpg" alt="Snow" style="width:100%">
+            <center><p>Apple Macbook air (11 inch)<br>Rs 49,900</p></center>
+          </a>
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="column">
+          <a href="home.html">
+            <img src="images/apple-macbook-pro-15-inch-2017-14.jpg" alt="Snow" style="width:100%">
+            <center><p>Apple Macbook pro (15 inch)<br>Rs 2,15,000</p></center>
+          </a>
+        </div>
+        <div class="column">
+          <a href="home.html">
+            <img src="images/apple-macbook-air.jpg" alt="Snow" style="width:100%">
+            <center><p>Apple Macbook air (13 inch)<br>Rs 69,900</p></center>
+          </a>
+        </div>
+        <div class="column">
+          <a href="home.html">
+            <img src="images/apple-macbook-air-11-inch.jpg" alt="Snow" style="width:100%">
+            <center><p>Apple Macbook air (11 inch)<br>Rs 49,900</p></center>
+          </a>
+        </div>
+      </div>
+
+
+
+      <div class="footer">
+        <a href="sell.html" align="left">Register as a seller</a><br>
+        <a href="home.html" align="left">About us</a><br>
+        <a href="home.html" align="left">Contact</a><br>
+        <a href="home.html" align="left">FAQ</a><br>
+        <center>
+        <a href="share.html"><img class="share" src="images/facebook.jpg" style="height:20px;width:20px"></a>
+        <a href="share.html"><img class="share" src="images/twitter.jpg" style="height:20px;width:20px"></a>
+        <a href="share.html"><img class="share" src="images/insta.jpg" style="height:20px;width:20px"></a>
+        <a href="share.html"><img class="share" src="images/whatsapp.jpg" style="height:20px;width:20px"></a>
+        <p>e-cart is a shopping site where we can buy all kinds of electronic goods.<br>
+          While using this site, you agree to have read and accepted our terms of use, cookie and privacy policy. <br>
+          Copyright @2019. All Rights Reserved.</p>
+        </center>
+      </div>
+
+
+      <script>
+      function openForm() {
+        document.getElementById("myForm").style.display = "block";
+      }
+      function signUp() {
+        var str = "create an new account";
+        var result = str.link("signUp.html");
+        document.getElementById("demo").innerHTML = result;
+      }
+      function closeForm() {
+        document.getElementById("myForm").style.display = "none";
+      }
+      // Get the modal
+      var modal = document.getElementById('myModal');
+
+      // Get the button that opens the modal
+      var btn = document.getElementById("myBtn");
+
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close")[0];
+
+      // When the user clicks the button, open the modal
+      btn.onclick = function() {
+        modal.style.display = "block";
+      }
+
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function() {
+        modal.style.display = "none";
+      }
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+      </script>
+  </body>
+</html>

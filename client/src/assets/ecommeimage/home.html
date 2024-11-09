@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>e-cart</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="nav.css">
+    <style media="screen">
+    .container{
+      position: relative;
+      color: grey;
+      text-align: center;
+    }
+    .content{
+      position:absolute;
+      left:16px;
+      top: 50%;
+      left: 20%;
+      align: left;
+      transform: translate(-50%, -50%);
+    }
+    .content2{
+      position:absolute;
+      left:25px;
+      top: 150%;
+      left: 30%;
+      align: left;
+      transform: translate(-50%, -50%);
+    }
+    .content3{
+      position:absolute;
+      left:25px;
+      top: 150%;
+      left: 70%;
+      align: left;
+      transform: translate(-50%, -50%);
+    }
+    .content4{
+      position:absolute;
+      left:25px;
+      top: 200%;
+      left: 30%;
+      align: left;
+      transform: translate(-50%, -50%);
+    }
+    .content5{
+      position:absolute;
+      left:25px;
+      top: 200%;
+      left: 70%;
+      align: left;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+
+
+  </head>
+  <body>
+    <!-- Navigation -->
+    <img src="images/ecartimg.jpg" style="height:40px;width:150px"alt="">
+    <logo align="right" style="font-family: Comic Sans MS, cursive, sans-serif;font-size: 30px;color: grey;"><i>.com</i></logo>
+
+    <div class="navbar">
+      <div class="topnav">
+        <a class="active" href="#home">Home</a>
+        <button class="open-button" onclick="openForm()">Log in</button>
+          <div class="form-popup" id="myForm">
+            <form class="form-container">
+              <h1>Log in</h1>
+
+              <label for="email"><b>Email</b></label>
+              <input type="text" placeholder="Enter Email" name="email" required>
+
+              <label for="psw"><b>Password</b></label>
+              <input type="password" placeholder="Enter Password" name="psw" required>
+
+              <button type="submit" class="btn">Log in</button>
+              <center><h3>-or-</h3><h3>Create an Account</h3></center>
+              <button type="link" class="btn" onclick="signUp()">Sign up</button>
+              <p id="demo"></p>
+              <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+            </form>
+          </div>
+
+          <a id="myBtn">Members</a>
+
+          <!-- The Modal -->
+          <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <p><center><i>-Created by-</i><br><br><b>Aadesh Dutta -160102010<br>
+                Riturag Saikia -160102017<br>Bharat Bhushan Saikia -160102018</b></center></p>
+              </div>
+            </div>
+
+          <div class="dropdown">
+            <button class="dropbtn">Categories</button>
+            <div class="dropdown-content">
+              <a href="laptop.html">Laptops</a>
+              <a href="phones.html">Smart Phones</a>
+              <a href="camera.html">Camera</a>
+              <a href="tablets.html">Tablets</a>
+            </div>
+          </div>
+
+        <div class="search-container">
+          <form action="/action_page.php">
+            <input type="text" placeholder="Search..." name="search">
+          </form>
+        </div>
+      </div>
+    </div><br>
+
+    <div  class="container">
+      <img src="images/1.jpg" alt="Snow"style="height:500px; width:1330px"alt="">
+      <div class="content" align="left">
+        <h1>A new shopping</h1>
+        <h1>experience...</h1>
+        <h3><i>Explore the best electronic goods and buy whithin your budget.</i></h3>
+        <h3><i>Get discounts upto 90%.</i></h3>
+        </div>
+      </div>
+
+      <center>
+        <h1>What are sold here?</h1>
+        <div class="Products">
+          <a href="laptop.html">
+            <img class="mySlides" src="images/laptop.jpg" style="height:300px;width:600px;">
+          </a>
+          <a href="camera.html">
+            <img class="mySlides" src="images/camera.jpg" style="height:300px;width:600px;">
+          </a>
+          <a href="phones.html">
+            <img class="mySlides" src="images/phones.jpg" style="height:300px;width:600px;">
+          </a>
+          <a href="tablets.html">
+            <img class="mySlides" src="images/tablets.jpg" style="height:300px;width:600px;">
+          </a>
+
+          <div class="content2">
+            <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+          </div>
+          <div class="content3">
+            <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+          </div>
+        </div>
+      </center>
+
+      <center>
+        <h1>Brands Available</h1>
+        <div class="w4-content w3-display-container">
+          <a href="apple.html">
+            <img class="mySlides1" src="images/apple.jpg" style="height:300px;width:400px;">
+          </a>
+          <a href="sony.html">
+            <img class="mySlides1" src="images/sony.jpg" style="height:300px;width:400px;">
+          </a>
+          <a href="samsung.html">
+            <img class="mySlides1" src="images/samsung.jpg" style="height:300px;width:400px;">
+          </a>
+          <a href="asus.html">
+            <img class="mySlides1" src="images/asus.jpg" style="height:300px;width:400px;">
+          </a>
+
+          <div class="content4">
+            <button class="w4-button w3-black w3-display-left" onclick="plusDivs1(-1)">&#10094;</button>
+          </div>
+          <div class="content5">
+            <button class="w4-button w3-black w3-display-right" onclick="plusDivs1(1)">&#10095;</button>
+          </div>
+        </div>
+      </center>
+      <br><br><br><br>
+
+
+
+      <div class="footer">
+        <a href="sell.html" align="left">Register as a seller</a><br>
+        <a href="home.html" align="left">About us</a><br>
+        <a href="home.html" align="left">Contact</a><br>
+        <a href="home.html" align="left">FAQ</a><br>
+        <center>
+          <a href="share.html"><img class="share" src="images/facebook.jpg" style="height:20px;width:20px"></a>
+          <a href="share.html"><img class="share" src="images/twitter.jpg" style="height:20px;width:20px"></a>
+          <a href="share.html"><img class="share" src="images/insta.jpg" style="height:20px;width:20px"></a>
+          <a href="share.html"><img class="share" src="images/whatsapp.jpg" style="height:20px;width:20px"></a>
+          <p>e-cart is a shopping site where we can buy all kinds of electronic goods.<br>
+            While using this site, you agree to have read and accepted our terms of use, cookie and privacy policy. <br>
+            Copyright @2019. All Rights Reserved.
+          </p>
+        </center>
+      </div>
+
+
+
+
+
+
+      <script>
+      function openForm() {
+        document.getElementById("myForm").style.display = "block";
+      }
+      function signUp() {
+        var str = "create a new account";
+        var result = str.link("signUp.html");
+        document.getElementById("demo").innerHTML = result;
+      }
+      function closeForm() {
+        document.getElementById("myForm").style.display = "none";
+      }
+
+
+
+
+      // Get the modal
+      var modal = document.getElementById('myModal');
+
+      // Get the button that opens the modal
+      var btn = document.getElementById("myBtn");
+
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close")[0];
+
+      // When the user clicks the button, open the modal
+      btn.onclick = function() {
+        modal.style.display = "block";
+      }
+
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function() {
+        modal.style.display = "none";
+      }
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+
+
+
+
+      var slideIndex = 1;
+      showDivs(slideIndex);
+
+      function plusDivs(n) {
+        showDivs(slideIndex += n);
+      }
+
+      function showDivs(n) {
+        var i;
+        var x = document.getElementsByClassName("mySlides");
+        if (n > x.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = x.length}
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+        x[slideIndex-1].style.display = "block";
+      }
+
+
+
+      var slideIndex = 1;
+      showDivs1(slideIndex);
+
+      function plusDivs1(n) {
+        showDivs1(slideIndex += n);
+      }
+
+      function showDivs1(n) {
+        var i;
+        var x = document.getElementsByClassName("mySlides1");
+        if (n > x.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = x.length}
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+        x[slideIndex-1].style.display = "block";
+      }
+    </script>
+  </body>
+</html>
